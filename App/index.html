@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Elm Names</title>
+    <script src="build/bundle.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script>
+      var elmApp = Elm.embed(Elm.App.Main, document.getElementById("app"))
+      elmApp.ports.focusOnNewName.subscribe(function(txt) { 
+//        console.log( txt ); 
+        document.getElementById(txt).focus()});
+    </script>
+    <p id="log"></p>
+  </body>
+</html>
